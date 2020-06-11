@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creamos clase persona con una dos propiedades y un metodo
+        function person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.changeName = function (name) {
+                this.name = name;
+            }
+
+            //Se pueden agregar funciones existenetes como metodos
+            this.yearOfBirth = bornYear;
+        }
+
+        var p = new person("Juan", 36);
+        document.write("Nombre por defecto: " + p.name + "<br />");
+        p.changeName(prompt("¿Cual es tu nombre?"));
+        document.write("Nombre actual: " + p.name + "<br />");
+        document.write("Tu año de nacimiento es: " + p.yearOfBirth());
+        
+        //Agregamos un metodo extra
+        function bornYear() {
+            var d = new Date();
+            return d.getFullYear() - this.age;
+        }
+
+    </script>
+</body>
+</html>
