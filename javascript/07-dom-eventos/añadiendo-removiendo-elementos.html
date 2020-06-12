@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "demo">some text</div>
+
+    <div id="parrafos">
+        <p id = "p1">This is a paragraph</p>
+        <p id = "p2">This is other paragraph</p>
+    </div>
+
+    <script>
+        var p = document.createElement("p");
+        var node = document.createTextNode("Some new text");
+        p.appendChild(node);
+        var div = document.getElementById("demo");
+        div.appendChild(p)
+
+        var parent = document.getElementById("parrafos");
+        var child = document.getElementById("p1");
+        parent.removeChild(child);
+
+        var p3 = document.createElement("p");
+        var node3 = document.createTextNode("Replaced child");
+        p3.appendChild(node3);
+
+        var e = document.getElementById("p2");
+        parent.replaceChild(p3, e);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.google.com.mx/search?q=apple&tbm=isch">
+        <img id="myimg" src="images/apple.png" alt="apple" style="width: 200px;">
+    </a>
+
+    <div id="demo" style="width: 200px;">
+        Some text
+    </div>
+
+    <script>
+        var img = document.getElementById("myimg");
+        img.src = "images/orange.png";
+        img.alt = "Orange";
+
+        var arr = document.getElementsByTagName("a");
+        for (x = 0; x < arr.length; x++) {
+            arr[x].href = "https://www.google.com.mx/search?q=orange&tbm=isch";;
+        }
+
+        var d = document.getElementById("demo");
+        d.style.color = "#6600FF";
+        d.style.width = "100px";
+    </script>
+</body>
+</html>
