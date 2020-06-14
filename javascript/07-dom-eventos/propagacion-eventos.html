@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">Click me!</p>
+    </div>
+
+    <div id="div2">
+        <p id="p2">Click me!</p>
+    </div>
+
+    <script>
+        var div1 = document.getElementById("div1");
+        var p1 = document.getElementById("p1");
+
+        div1.addEventListener("click", divClick, true);
+        p1.addEventListener("click", pClick, true);
+        
+        var div2 = document.getElementById("div2");
+        var p2 = document.getElementById("p2");
+
+        div2.addEventListener("click", divClick, false);
+        p2.addEventListener("click", pClick, false);
+    
+        function divClick() {
+            alert("div event!");
+        }
+
+        function pClick() {
+            alert("p event");
+        }
+    </script>
+</body>
+</html>

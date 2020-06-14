@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getTime()">
+    <input type="text" name="date" id="date" value="date"><br />
+    <input type="text" name="name" id="name" value="willy" onchange="onChangeName()"><br />
+    <button onclick="show()">Click me</button><br />
+    <button id="demo">Start</button>
+
+    <script>
+        var btn = document.getElementById("demo");
+        btn.addEventListener("click",myFunction);
+
+        function show() {
+            alert("Hello world!");
+        }
+
+        function getTime() {
+            var d = new Date();
+            var txt = document.getElementById("date");
+            txt.value = d;
+        }
+
+        function onChangeName() {
+            var txt = document.getElementById("name");
+            txt.value = txt.value.toUpperCase();
+        }
+
+        function myFunction(params) {
+            alert("Event start!");
+            btn.removeEventListener("click",myFunction)
+        }
+    </script>
+</body>
+</html>
