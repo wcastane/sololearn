@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function varTest() {
+            var x = 1;
+            if(true) {
+                var x = 2; // same variable
+                console.log(x); //2
+            }
+            console.log(x); //2
+        }
+
+        function letTest() {
+            let x = 1;
+            if(true) {
+                let x = 2; //different variable
+                console.log(x) //2
+            }
+            console.log(x); //1
+        }
+
+        function constante() {
+            const a = 'Hello';
+            a = "bye";
+        }
+
+        function templateLiterals() {
+            let name = "David";
+            let msg = `Welcome ${name}`;
+            console.log(msg);
+        }
+
+        varTest();
+        letTest();
+        //constante();
+        templateLiterals();
+    </script>
+</body>
+</html>
