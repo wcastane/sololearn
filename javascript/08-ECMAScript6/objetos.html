@@ -1,0 +1,77 @@
+<script>
+    //Declaración shorthand
+    let tree = {
+        height: 10,
+        color: "green",
+        grow() {
+            this.height += 2;
+        }
+    };
+    //Al ejecutar el metodo suma 2 a la altura
+    tree.grow()
+    //Mostramos la altura actual
+    console.log(tree.height);
+
+    //Declaración de objeto con valor una variable como propiedad 
+    let height = 5;
+    let healt = 100;
+
+    let athlete = {
+        height,
+        healt
+    };
+
+    //Mostramos los valores de las propiedades
+    console.log(`height: ${athlete.height}`);
+    console.log(`healt: ${athlete.healt}`);
+
+    //Cuando se escriben propiedades repetidas, la ultima sobrescribe la anterior
+    var a = { x: 1, x: 2, x: 3, x: 4};
+    console.log(`x=${a.x}`);
+
+    //Propiedades de nombre calculado
+    let prop = "name";
+    let id = "1234";
+    let mobile = "08923";
+
+    let user = {
+        [prop]: "Jack",
+        [`user_${id}`]: `${mobile}`
+    };
+
+    console.log("User Name: " + user.name);
+    console.log("User Id: " + user.user_1234);
+
+    //Object.assign() para combinar dos objetos}
+    let person = {
+        name: "Jack",
+        age: 18,
+        sex: "male"
+    }
+
+    let student = {
+        name: "bob",
+        age: 20,
+        xp: '2'
+    };
+
+    let newStudent = Object.assign({},person, student);
+    console.log(newStudent);
+
+    //Object.assign() se puede utilizar para clonar objetos.
+    let newPerson = person; //Se crea una referencia al objeto por lo que el valor cambia en cualqueira de los dos
+    newPerson.name = "Bob";
+
+    console.log(person.name);
+    console.log(newPerson.name);
+
+    let newPerson2 = Object.assign({},person); //Se crea un nuevo objeto sin referencia al anterior (Un clon)
+    newPerson2.name = "Jack";
+
+    console.log(person.name);
+    console.log(newPerson2.name);
+
+    
+
+
+</script>
