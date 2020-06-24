@@ -1,0 +1,47 @@
+<script>
+    //Desestructurar un array a variables.
+    let arr = ["1", "2", "3"];
+    let [one, two, three] = arr;
+
+    console.log(one); //1
+    console.log(two); //2
+    console.log(three); //3
+
+    //Desestructurar un array de una función.
+    let myfunc = () => {
+        return [1,2,3];
+    }
+
+    let [uno, ,dos] = myfunc();
+
+    console.log(uno); //1
+    console.log(dos); //3
+
+    let a,b,c=4,d=8;
+    [a,b=6] = [2] // a=2, b=6
+    [c,d] = [d,c] //c=8, d=4
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+
+    //Desestructuración de objetos
+    let obj = {h:100, s: true};
+    let {h, s} = obj
+
+    console.log(h); //100
+    console.log(s); //true
+
+    var o = {h: 42, s: true};
+    var {h: foo, s: bar} = o;
+    console.log(foo) //42
+    console.log(bar) //20
+
+    var obj2 = {id: 42, name: "Jack"};
+    let {id = 10, age = 20} = obj2;
+
+    console.log(id); //42
+    console.log(age); //20
+
+</script>
