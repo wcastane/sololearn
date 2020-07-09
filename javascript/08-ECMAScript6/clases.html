@@ -1,0 +1,65 @@
+<script>
+    class Rectangle{
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+        get area() {
+            return this.calcArea();
+        }
+        calcArea() {
+            return this.height * this.width;
+        }
+
+    }
+
+    const square = new Rectangle(5, 5);
+    const poster = new Rectangle(2, 3);
+
+    console.log(square);
+    console.log(poster);
+
+    console.log(square.area);
+
+
+    //Metodos estaticos, solo se pueden ejecutar sin instanciar el objeto
+    class Point {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        static distance(a, b){
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            return Math.hypot(dx, dy);
+        }
+    }
+
+    const p1 = new Point(7, 2);
+    const p2 = new Point(3, 8);
+    //Se obtiene la distancia entre los dos puntos
+    console.log(Point.distance(p1, p2));
+
+    //La clase animal es la clase base
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speek() {
+            console.log(this.name + ' makes a noise.');
+        }   
+    }
+
+    //La clase perro hereda de la clase animal
+    class Dog extends Animal {
+        speak() {
+            super.speek(); // Se llama al constructor de la clase base
+            console.log(this.name + ' barks.')
+        }
+    }
+
+    //Se crea una instancia de la clase perro
+    let dog = new Dog('Rex');
+    dog.speak(); //Cuando se utiliza el metodo de la clase perro, llama al metodo de la clase base y depsues ejecutra el codigo del metodo.
+
+</script>

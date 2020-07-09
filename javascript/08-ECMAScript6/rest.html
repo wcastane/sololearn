@@ -1,0 +1,36 @@
+<script>
+    // Funcion en la que se envia un array de numeros y compara si los parametros estan dentro del array
+    function containsAll(arr, ...nums) {
+        //Ciclo para recorrer uno a uno los parametros
+        for (let num of nums) {
+            //Se compara contra el array para ver si contiene el numero
+            if (arr.indexOf(num) === -1) {
+                //Si no se encuentra regresa falso
+                return false;
+            }
+        }
+        //Si todos los parametros son encontrados regresa verdadero
+        return true;
+    }
+
+    // Array que contiene los numero con los que se comparará
+    let x = [2,4,6,7];
+    //Se pregunta si los numeros 2, 4 y 7 se encuentran dentro del array 2,4,6,7 (El resultado es verdadero)
+    console.log(containsAll(x, 2, 4, 7));
+    //Se pregunta si los numeros 6, 4 y 9 se encuentran dentro del array 2,4,6,7 (El resultado es falso)
+    console.log(containsAll(x, 6, 4, 9));
+
+
+    //Parametro Spread en literales de arrays
+    const myFunction = (w, x, y, z) => {
+        console.log(w + x + y + z);
+    };
+
+    let args = [1, 2, 3];
+    myFunction(...args, 4); // se envian los 3 primeros parametros dentro del array y el 4to por fuera del array.
+
+    // Se pueden insertar los valores de un array en cualquier lugar de un nuevo array 
+    let newArr = ['Three', 'Four'];
+    let arr = ['One', 'Two', ...newArr, 'Five'];
+    console.log(arr);
+</script>
