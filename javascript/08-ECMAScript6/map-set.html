@@ -1,0 +1,33 @@
+<script>
+    // *** Objeto Map *** //
+
+    //Creamos una variable de tipo Map para almacenar pares de valores Key, Value
+    let map = new Map([['k1','v1'],['k2','v2']]);
+    console.log(map.size); //2
+    console.log(map.get('k1')); //Obtnemos el valor 1 para la key 1
+    console.log(map.has('k2')); //Preguntamos si existe la key 2
+    map.set('k3', 'v3'); // Agremaos el Key 3 Valor 3
+    map.set('k4','v4'); // Agregamos el Key 4 Valor 4
+    map.delete('k3');
+
+    for (let kv of map.entries()) // Iteramos con todos los valores
+        console.log(kv[0] + ':' + kv[1]); // Enviamos a consola todos los Key/Values
+
+    map.clear(); //Limpiamos la variable
+    console.log(map.size); // 0
+
+    // *** Objeto Set *** //
+
+    let set = new Set([1,2,4,2,59,9,4,9,1]);
+    console.log(set.size); //5
+    console.log(set.has(9)); // Preguntamos si existe el valor 9
+    set.add(22).add(23).add(24); //Agregamos 3 numeros mas
+    set.delete(23); //Eliminamos el numero 23
+
+    for (let v of set.values()) // Iteramos los valores que hay en la variable set
+        console.log(v); // Enviamos a consola todos los valores de la variable set
+
+    set.clear(); // Limpiamos la variable set
+    console.log(set.size);
+
+</script>

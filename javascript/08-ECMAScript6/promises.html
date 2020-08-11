@@ -1,0 +1,34 @@
+<script>
+    // Anteriormente se utilizaba este codigo pero ahora se puede usar Promise
+    // setTimeout(function() {
+    //     console.log("Work 1");
+    //     setTimeout(function() {
+    //         console.log("Work 2");
+    //     }, 1000);
+    // }, 1000);
+    // console.log("End");
+
+    function asyncFun(work) {
+        return new Promise(function(resolve, reject){
+            if (work === "")
+                reject(Error("Nothing"));
+                setInterval(function(){
+                    resolve(work);
+                }, 1000);
+        });
+    }
+
+    asyncFun("Work 1") //Task 1
+    .then(function(result){
+        console.log(result);
+        return asyncFun("Work 2"); // Taks 2
+    }, function(error) {
+        console.log(error)
+    })
+    .then(function(result){
+        console.log(result);
+    }, function(error){
+        console.log(error);
+    });
+    console.log("End");
+</script>
